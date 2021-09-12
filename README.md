@@ -47,16 +47,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 │   ├── public
 │   └── src
 │       ├── components                 # Reusable Components
-│       ├── components                 # Reusable Components
-│       ├── components                 # Reusable Components
+│       ├── context                    # App Context (user & appointment info) 
+│       ├── data                       # Time slots
 │       ├── screens                    # App Screens
-│       ├── screens                    # App Screens
-│       ├── utils                      # Config for API call 
+│       ├── styles                     # Material UI useStyles functions
+│       ├── utils                      # Functions for API calls 
 │       ├── App.css
 │       ├── App.js
 │       ├── index.css
-│       ├── index.js                       
-│       └── store.js                   # REDUX Store
+│       └── index.js                  
 ├── .env                               # Config variables (Node env, port, DB string & JWT secret)
 ├── .gitignore
 ├── package-lock.json
