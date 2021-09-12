@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { createRef, useContext, useState } from "react";
 import { AppBar, Toolbar, Typography, Button, Link, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { UserContext } from "../context/UserContext";
 import logout from "../utils/logout";
@@ -10,7 +10,7 @@ const Navbar = () => {
   const { userInfo } = useContext(UserContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-
+  const wrapper = createRef();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const linkStyle = { textDecoration: "none" }
@@ -43,6 +43,11 @@ const Navbar = () => {
         <Link href="/profile" style={linkStyle} color="inherit">
           Profile
         </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+      <Link href="/appointment" style={linkStyle} color="inherit">
+        Make Appointment
+      </Link>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>
       <Link onClick={logout} style={linkStyle} color="inherit">

@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import useFetch from "../utils/useFetch";
 import { LinearProgress } from "@material-ui/core";
 import DateTimePicker from "../components/Calendar";
+import TimePicker from "../components/TimePicker";
 
 const BookAppointmentScreen = ({ history }) => {
   const URL = "/api/dentists";
@@ -17,6 +18,7 @@ const BookAppointmentScreen = ({ history }) => {
       <Navbar />
       {isLoading ? <LinearProgress /> : <Doctor dentists={data} />}
       <Treatment />
+      <TimePicker/>
       <DateTimePicker/>
       <FinalBook history={history} />
       <Footer />

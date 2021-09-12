@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { InputLabel, FormControl, Select } from "@material-ui/core";
 import { UserContext } from "../context/UserContext";
+import useStyles from "../styles/dropdownStyles";
 
 const treatments = [
   {
@@ -14,16 +14,6 @@ const treatments = [
     name: "Beauty Procedures",
   },
 ];
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
 
 const Treatment = () => {
   const classes = useStyles();
@@ -43,10 +33,9 @@ const Treatment = () => {
       appointmentDetails.description = treatment.treatmentName
       setAppointmentDetails({...appointmentDetails})
     }
-  },[treatment])
+  }, [treatment])
 
   return (
-    <div>
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor="select-treatment">Treatment</InputLabel>
         <Select
@@ -63,7 +52,6 @@ const Treatment = () => {
           ))}
         </Select>
       </FormControl>
-    </div>
   );
 };
 

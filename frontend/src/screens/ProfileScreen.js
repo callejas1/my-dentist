@@ -12,11 +12,14 @@ import {
   TableCell,
   TableBody,
   TableRow,
-  LinearProgress
+  LinearProgress,
+  TableContainer,
+  Paper
 } from "@material-ui/core";
 import CancelIcon from '@material-ui/icons/Cancel';
 import Navbar from "../components/Navbar";
 import Message from "../components/Message";
+import CancelAppointmentAlert from "../components/CancelAppointmentAlert";
 
 const useStyles = makeStyles((theme) => ({ header: { margin: "1rem" } }));
 
@@ -78,7 +81,7 @@ const ProfileScreen = ({ history }) => {
           Welcome, {userInfo?.name}!
         </Typography>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
             <Typography component="h1" variant="h5">
               Name
             </Typography>
@@ -118,44 +121,40 @@ const ProfileScreen = ({ history }) => {
               </Button>
             </form>
           </Grid>
-          <Grid item xs={12} sm={6} md={8}>
-            <Table className={classes.table} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Procedure</TableCell>
-                  <TableCell>Date</TableCell>  
-                  <TableCell>Time</TableCell>  
-                  <TableCell />
-                </TableRow>
-              </TableHead>
-            {appointments ?
-              appointments.map((app) => (
-                <TableBody key={app._id}>
+          <Grid item xs={12} sm={12} md={6} lg={8}>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table" size="small">
+                <TableHead>
                   <TableRow>
-                    <TableCell>{app.description}</TableCell>
-                    <TableCell>{app.startDate}</TableCell>
-                    <TableCell>
-                    {app.timeRange}
-                    </TableCell>
-                    <TableCell>
-                      {app.cancelled ? <CancelIcon color="secondary"/> : (<Button
-                      type="submit"
-                      variant="contained"
-                      color="primary"
-                      onClick={() => cancelAppointment(app._id)}>
-                      Cancel
-                    </Button>)}
-                    </TableCell>
+                    <TableCell>Procedure</TableCell>
+                    <TableCell>Date</TableCell>  
+                    <TableCell>Time</TableCell>  
+                    <TableCell />
                   </TableRow>
+                </TableHead>
+                <TableBody>
+              {appointments ?
+                appointments.map((app) => (
+                    <TableRow key={app._id}>
+                      <TableCell>{app.description}</TableCell>
+                      <TableCell>{app.startDate}</TableCell>
+                      <TableCell>
+                      {app.timeRange}
+                      </TableCell>
+                      <TableCell>
+                        {app.cancelled ? <CancelIcon color="secondary"/> : (
+                          <CancelAppointmentAlert id={app._id} cancelAppointment={cancelAppointment}/>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                )) : (
+                  <TableRow>
+                    <TableCell>No appointments to show</TableCell>
+                  </TableRow>
+                )}
                 </TableBody>
-              )) : (
-              <TableBody>
-                <TableRow>
-                  <TableCell>No appointments to show</TableCell>
-                </TableRow>
-              </TableBody>
-              )}
-            </Table>            
+              </Table>   
+            </TableContainer>         
           </Grid>
         </Grid>  
         {isLoading ? <LinearProgress  style={{marginTop: 30}}/> : message && <Message severity="info">{message}</Message>}

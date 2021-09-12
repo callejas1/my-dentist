@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { InputLabel, FormControl, Select } from "@material-ui/core";
 import { UserContext } from "../context/UserContext";
-import useStyles from "../styles/doctorStyles";
+import useStyles from "../styles/dropdownStyles";
 
 const Doctor = ({ dentists }) => {
   const classes = useStyles();
@@ -20,11 +20,9 @@ const Doctor = ({ dentists }) => {
       appointmentDetails.resourceId = doctor.id
       setAppointmentDetails({...appointmentDetails})
     }
-    
   }, [doctor])
 
   return (
-    <div>
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor="select-doctor">Doctor</InputLabel>
         <Select
@@ -41,7 +39,6 @@ const Doctor = ({ dentists }) => {
           ))}
         </Select>
       </FormControl>
-    </div>
   );
 };
 

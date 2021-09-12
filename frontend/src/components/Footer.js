@@ -4,10 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Copyright from "./Copyright";
 
 const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(2),
-  },
   appBar: {
     marginTop: '2rem',
     padding: '.75rem',

@@ -43,7 +43,7 @@ const HomeScreen = ({ history }) => {
       <Navbar />
       <CssBaseline />
       <Grid container component="main" className={classes.root}>
-        <Grid item sm={12} md={!userInfo ? 8 : 12}  className={classes.image}>
+        <Grid item sm={12} md={!userInfo ? 8 : 12}  className={classes.image} style={{backgroundImage: window.innerWidth <= 425 ? "" : "url(https://images.unsplash.com/photo-1613918108466-292b78a8ef95?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80)"}}>
           <Grid item xs={12} md={12} lg={12} className={classes.imageBox}>
             <Typography variant="h1" className={classes.imageTypo}>
               Improving the world, one smile at a time
