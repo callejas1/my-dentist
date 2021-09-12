@@ -48,7 +48,7 @@ export default function Album({ dentists }) {
             align="center"
             color="textPrimary"
           >
-            Our Dentists
+            My Dentist
           </Typography>
         </Grid>
         <Grid item xs={12} md={12} lg={12} className={classes.typo2}>
@@ -58,14 +58,9 @@ export default function Album({ dentists }) {
             color="textSecondary"
             paragraph
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-            optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-            obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-            nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-            tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-            quia.          
+            A professional and experienced dental team is available at our practice The Netherlands. You can come to us with your whole family, in addition to the regular check-up you can also contact us for almost all dental treatments (beauty procedures, general treatments). 
+
+            You can come by during office hours on weekdays. To make an appointment you can register directly.
           </Typography>
         </Grid>
       </Container>
@@ -84,9 +79,7 @@ export default function Album({ dentists }) {
                     {dentist.name}
                   </Typography>
                   <Typography>
-                    Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
-                    sapiente officiis modi at sunt excepturi expedita 
-                    recusandae alias error harum.
+                    {dentist.resourceTitle}
                   </Typography>
                 </CardContent>
               </Card>

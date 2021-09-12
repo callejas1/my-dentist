@@ -89,7 +89,7 @@ const Navbar = () => {
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link href="/" color="inherit" style={linkStyle}>
-              My Dentist
+              <img src="./logo.png" alt="my dentist logo" width='120'/>
             </Link>
           </Typography>
           {userInfo && userInfo.email ? (

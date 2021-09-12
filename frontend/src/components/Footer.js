@@ -1,12 +1,15 @@
 import React from "react";
-import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Copyright from "./Copyright";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    width: '100%',
     marginTop: '2rem',
-    padding: '.75rem',
+    padding: '.5rem',
+    background: '#3f51b5',
+    color: '#fff'
   },
 }));
 
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   return (
-    <AppBar position="static" className={classes.appBar}>
+    <footer className={classes.appBar}>
       <Container maxWidth="md">
         <Typography
           variant="subtitle1"
@@ -24,8 +27,8 @@ const Footer = () => {
           Developed by Yoselyn Callejas
         </Typography>
       <Copyright/>
-    </Container>
-  </AppBar>
+      </Container>
+    </footer>
   );
 };
 

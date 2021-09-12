@@ -77,7 +77,6 @@ const AppointmentDetailsScreen = ({ history, match }) => {
           </Paper>
         </main>
       </React.Fragment>
-      <Footer/>
     </>
   );
 }

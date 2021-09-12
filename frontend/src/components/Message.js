@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
     '& > * + *': {
       margin: theme.spacing(0),
     },
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Message = ({ severity, title, children }) => {
+const Message = ({ severity, children }) => {
   const classes = useStyles();
 
   return (

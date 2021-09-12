@@ -61,7 +61,6 @@ function RegisterScreen({ history, location }) {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-
           <Avatar className={classes.avatar}>
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -147,7 +146,7 @@ function RegisterScreen({ history, location }) {
             {loading && <LinearProgress/>}
             {message && <Message severity="info">{message}</Message>} 
             {error && <Message severity="error">{error}</Message>}
-            <Grid container justify="flex-end">
+            <Grid container justify="flex-start">
               <Grid item>
                 <Link href={redirect ? `/login?redirect=${redirect}` : '/login'} variant="body2">
                   Already have an account? Sign in

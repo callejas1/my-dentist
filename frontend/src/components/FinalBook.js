@@ -29,6 +29,13 @@ const FinalBook = ({ history }) => {
     }
 
   }, [userInfo, history, success])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setError("");
+    }, 2000);  
+  }, [error]);  
+
   
   const bookHandler = () => {
     // create new appointment -> fetch API >> method: POST
@@ -40,22 +47,22 @@ const FinalBook = ({ history }) => {
     })
   }
 
+  const cancelHandler = () => { 
+    history.push('/')
+  }
+
   return (
     <>
       <div className="appointment-group">
-        <Link to="/">
-          <Button variant="contained" color="primary">
-            Cancel
-          </Button>
-        </Link>
-        <Button onClick={bookHandler} variant="contained" color="primary">
+        <Button onClick={cancelHandler} variant="contained" color="secondary">
+          Cancel
+        </Button>
+        <Button onClick={bookHandler} variant="outlined" color="primary">
           Book
         </Button>
       </div>
-      <div>
-        {error && <Message severity="error">{error}</Message>}
-        {loading && <LinearProgress/>}
-      </div>
+      {error && <Message severity="error">{error}</Message>}
+      {loading && <LinearProgress/>}
     </>
   );
 };
