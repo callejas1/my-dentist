@@ -23,6 +23,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/appointment", appointmentRoutes);
 app.use("/api/dentists", dentistRoutes);
 
+const __dirname = path.resolve();
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')))
 
