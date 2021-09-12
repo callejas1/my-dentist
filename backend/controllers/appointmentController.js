@@ -9,7 +9,7 @@ import sgMail from "@sendgrid/mail";
 // @access  Private
 const createAppointment = asyncHandler(async (req, res) => {
   const user = await User.findById(req.body.userId)
-  const { description, resourceId, userId, startDate, duration } = req.body;
+  const { description, resourceId, userId, startDate, timeRange, duration } = req.body;
 
   if (description && description.length === 0) {
     res.status(400);
@@ -20,10 +20,11 @@ const createAppointment = asyncHandler(async (req, res) => {
       resourceId,
       userId,
       startDate,
+      timeRange,
       duration,
     });
     // add appointment to user appointments array
-    user.appointments.push(appointment._id)
+    await user.appointments.push(appointment._id)
 
     const createdAppointment = await appointment.save();
     user.save()
@@ -78,6 +79,7 @@ const appointmentConfirmationEmail = asyncHandler(async (req, res) => {
             appointment: appointment.description,
             patient: user.name,
             date: appointment.startDate,
+            time: appointment.timeRange,
             duration: appointment.duration,
             dentist: `${dentist.resourceTitle} ${dentist.name}`,
           },

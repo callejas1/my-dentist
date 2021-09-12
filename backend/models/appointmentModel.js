@@ -17,7 +17,11 @@ const appointmentSchema = mongoose.Schema(
       ref: 'User',    
     },
     startDate: {
-      type: Object,
+      type: String,
+      required: true,
+    },
+    timeRange: {
+      type: String,
       required: true,
     },
     duration: {
