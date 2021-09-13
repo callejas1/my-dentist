@@ -18,7 +18,7 @@ const TimePicker = ({ setTime }) => {
       appointmentDetails.timeRange = selectedTime;
       setAppointmentDetails({ ...appointmentDetails });
     }
-
+    // eslint-disable-next-line
   }, [selectedTime]);
 
 

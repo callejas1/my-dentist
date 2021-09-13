@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Container, Typography } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Copyright from "./Copyright";
 
@@ -26,7 +26,7 @@ const Footer = () => {
         >
           Developed by Yoselyn Callejas
         </Typography>
-      <Copyright/>
+        <Copyright/>
       </Container>
     </footer>
   );

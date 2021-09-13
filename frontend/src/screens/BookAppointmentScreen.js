@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Doctor from "../components/Doctor";
 import Treatment from "../components/Treatment";
-import FinalBook from "../components/FinalBook";
+import FinalStep from "../components/FinalStep";
 import useFetch from "../utils/useFetch";
 import { Grid, LinearProgress, makeStyles } from "@material-ui/core";
 import DatePicker from "../components/Calendar";
@@ -22,11 +22,11 @@ const BookAppointmentScreen = ({ history }) => {
   const { isLoading, data } = useFetch(URL);
 
   return (
-    <div>
+    <>
       <Navbar />
       <Grid 
         container
-        direction="row"
+        direction="column"
         justifyContent="center"
         alignItems="center"
       >  
@@ -35,10 +35,12 @@ const BookAppointmentScreen = ({ history }) => {
           <Treatment />
           <TimePicker/>
         </Grid>
+        <Grid item xs={12} lg={12} className={classes.grid}>
+          <DatePicker />
+        </Grid>
       </Grid>
-      <DatePicker />
-      <FinalBook history={history} />
-    </div>
+      <FinalStep history={history} />
+    </>
   );
 };
 

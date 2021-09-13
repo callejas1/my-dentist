@@ -20,6 +20,7 @@ const Doctor = ({ dentists }) => {
       appointmentDetails.resourceId = doctor.id
       setAppointmentDetails({...appointmentDetails})
     }
+    // eslint-disable-next-line
   }, [doctor])
 
   return (

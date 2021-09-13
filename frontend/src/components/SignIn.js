@@ -8,7 +8,6 @@ import {
   FormControlLabel,
   Checkbox,
   Link,
-  Grid,
   Typography,
   Container, 
   LinearProgress

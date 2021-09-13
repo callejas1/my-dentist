@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SignIn from "../components/SignIn";
 import Navbar from "../components/Navbar";
 import { Container } from '@material-ui/core';
-import Footer from '../components/Footer';
 
 const LoginScreen = ({ history }) => {
 

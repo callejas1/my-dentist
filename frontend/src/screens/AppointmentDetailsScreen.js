@@ -14,7 +14,6 @@ import {
 import useStyles from "../styles/appointmentDetailsStyles";
 import appointmentDetailsEmail from "../utils/appointmentDetailsEmail";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const AppointmentDetailsScreen = ({ history, match }) => {
   const classes = useStyles();
@@ -22,6 +21,7 @@ const AppointmentDetailsScreen = ({ history, match }) => {
 
   useEffect(() => {
     appointmentDetailsEmail(match.params.id, userInfo)
+    // eslint-disable-next-line
   }, [match.params.id])
   
   const handleChange = (e) => {

@@ -1,4 +1,4 @@
-import React, { createRef, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AppBar, Toolbar, Typography, Button, Link, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { UserContext } from "../context/UserContext";
 import logout from "../utils/logout";
@@ -10,7 +10,6 @@ const Navbar = () => {
   const { userInfo } = useContext(UserContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const wrapper = createRef();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const linkStyle = { textDecoration: "none" }
@@ -89,7 +88,7 @@ const Navbar = () => {
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link href="/" color="inherit" style={linkStyle}>
-              <img src="./logo.png" alt="my dentist logo" width='120'/>
+              <img src="/logo.png" alt="my dentist logo" width='120'/>
             </Link>
           </Typography>
           {userInfo && userInfo.email ? (

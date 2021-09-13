@@ -33,6 +33,7 @@ const Treatment = () => {
       appointmentDetails.description = treatment.treatmentName
       setAppointmentDetails({...appointmentDetails})
     }
+    // eslint-disable-next-line
   }, [treatment])
 
   return (

@@ -1,12 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Button, LinearProgress } from "@material-ui/core";
 import { UserContext } from "../context/UserContext";
 import bookAppointment from "../utils/bookAppointment";
 import { userInfoFromStorage } from "../utils/initialState";
 import Message from './Message'
 
-const FinalBook = ({ history }) => {
+const FinalStep = ({ history }) => {
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -27,13 +26,13 @@ const FinalBook = ({ history }) => {
     if(success && appointmentDetails._id){
       history.push(`/appointment/${appointmentDetails._id}`)
     }
-
+    // eslint-disable-next-line
   }, [userInfo, history, success])
 
   useEffect(() => {
     setTimeout(() => {
       setError("");
-    }, 2000);  
+    }, 3000);  
   }, [error]);  
 
   
@@ -61,10 +60,12 @@ const FinalBook = ({ history }) => {
           Book
         </Button>
       </div>
+      <div>
       {error && <Message severity="error">{error}</Message>}
       {loading && <LinearProgress/>}
+      </div>
     </>
   );
 };
 
-export default FinalBook;
+export default FinalStep;

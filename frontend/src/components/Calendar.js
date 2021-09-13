@@ -19,7 +19,7 @@ const DatePicker = () => {
       appointmentDetails.startDate = selectedDate.toLocaleDateString();
       setAppointmentDetails({ ...appointmentDetails });
     }
-
+    // eslint-disable-next-line
   }, [selectedDate]);
 
   return (
