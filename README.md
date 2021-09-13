@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-The deployed version of this app is available online → [MyDentist]().
+The deployed version of this app is available online → [MyDentist](http://my-dentist-app.herokuapp.com/).
 
 To test the functionalities of this application you can use the following credentials:
 
