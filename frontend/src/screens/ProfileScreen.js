@@ -23,15 +23,13 @@ import CancelAppointmentAlert from "../components/CancelAppointmentAlert";
 
 const useStyles = makeStyles((theme) => ({ header: { margin: "1rem" } }));
 
-const ProfileScreen = ({ history, location }) => {
+const ProfileScreen = () => {
   const classes = useStyles();
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [trigger, setTrigger] = useState(false);
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
-
-  const redirect = location.search ? location.search.split('=')[1] : '/'
 
   const updateInfo = async (url, userInfo) => {
     setIsLoading(true);
@@ -68,13 +66,6 @@ const ProfileScreen = ({ history, location }) => {
       }  
     })();  
   }, [userInfo, trigger]);  
-
-  useEffect(() => {  
-    // if there's no data in userInfo redirect to '/'
-    if (!userInfo) {
-      history.push(redirect)
-    } 
-  }, [history, userInfo, redirect])
 
   useEffect(() => {
     setTimeout(() => {
@@ -130,7 +121,7 @@ const ProfileScreen = ({ history, location }) => {
               </Button>
             </form>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={8}>
+          <Grid item xs={12} sm={12} md={6} lg={8} >
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="simple table" size="small">
                 <TableHead>

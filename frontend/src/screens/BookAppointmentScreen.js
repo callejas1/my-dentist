@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import Doctor from "../components/Doctor";
 import Treatment from "../components/Treatment";
@@ -7,7 +7,6 @@ import useFetch from "../utils/useFetch";
 import { Grid, LinearProgress, makeStyles } from "@material-ui/core";
 import DatePicker from "../components/Calendar";
 import TimePicker from "../components/TimePicker";
-import { UserContext } from "../context/UserContext";
 
 const useStyles = makeStyles((theme) => ({
   grid: {
@@ -17,20 +16,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const BookAppointmentScreen = ({ history, location }) => {
+const BookAppointmentScreen = ({ history }) => {
   const classes = useStyles();
   const URL = "/api/dentists";
   const { isLoading, data } = useFetch(URL);
-  const { userInfo } = useContext(UserContext);
-
-  const redirect = location.search ? location.search.split('=')[1] : '/'
-
-  useEffect(() => {  
-    // if there's no data in userInfo redirect to '/'
-    if (!userInfo) {
-      history.push(redirect)
-    } 
-  }, [history, userInfo, redirect])
 
   return (
     <>

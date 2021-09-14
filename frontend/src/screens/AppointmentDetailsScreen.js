@@ -62,7 +62,7 @@ const AppointmentDetailsScreen = ({ history, match }) => {
                 </TableBody>
               </Table>
             <Typography variant="subtitle2" className={classes.typography}>
-              The details of your appointment will be sent to the email address on file. If you wish to cancel your appointment you can do so from your profile or follow the instructions in your email. If you wish, you can also contact our clinic.
+              The details of your appointment will be sent to the email address on file. If you wish to cancel your appointment you can do so from your profile or follow the instructions in your email. You can also contact our clinic directly.
             </Typography>
             <div className={classes.buttons}>
               <Button
