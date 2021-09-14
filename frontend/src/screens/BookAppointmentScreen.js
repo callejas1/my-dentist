@@ -21,7 +21,7 @@ const BookAppointmentScreen = ({ history, location }) => {
   const classes = useStyles();
   const URL = "/api/dentists";
   const { isLoading, data } = useFetch(URL);
-  const { userInfo, setUserInfo } = useContext(UserContext);
+  const { userInfo } = useContext(UserContext);
 
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
