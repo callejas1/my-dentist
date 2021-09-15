@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import { redirectToHTTPS } from './middleware/redirectMiddleware.js'
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import appointmentRoutes from "./routes/appointmentRoutes.js";
@@ -13,6 +14,8 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+app.use(redirectToHTTPS)
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
